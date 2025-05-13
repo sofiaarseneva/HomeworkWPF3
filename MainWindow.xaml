@@ -6,12 +6,42 @@
         xmlns:local="clr-namespace:HomeworkWPF3"
         mc:Ignorable="d"
         Title="Текстовый редактор" Height="450" Width="800">
+    <Window.CommandBindings>
+        <CommandBinding Command="ApplicationCommands.Open" Executed="OpenExecuted"/>
+        <CommandBinding Command="ApplicationCommands.Save" Executed="SaveExecuted"/>
+        <CommandBinding Command="ApplicationCommands.Close" Executed="CloseExecuted"/>
+    </Window.CommandBindings>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <ToolBarTray Grid.Row="0">
+        <Menu Grid.Row="0">
+            <MenuItem Header="_Файл">
+                <MenuItem x:Name="menuOpen" Header="_Открыть" Command="ApplicationCommands.Open">
+                    <MenuItem.Icon>
+                        <Image Source="Data/iconOpen.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem x:Name="menuSave" Header="_Сохранить" Command="ApplicationCommands.Save">
+                    <MenuItem.Icon>
+                        <Image Source="Data/iconSave.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <Separator/>
+                <MenuItem x:Name="menuExit" Header="_Закрыть" Command="ApplicationCommands.Close">
+                    <MenuItem.Icon>
+                        <Image Source="Data/iconExit.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="_Правка">
+                <MenuItem x:Name="menuCopy" Header="_Копировать" Command="ApplicationCommands.Copy"/>
+                <MenuItem x:Name="menuPaste" Header="_Вставить" Command="ApplicationCommands.Paste"/>
+            </MenuItem>
+        </Menu>
+        <ToolBarTray Grid.Row="1">
             <ToolBar>
                 <ComboBox x:Name="fontNameComboBox" Width="200" SelectedIndex="0" SelectionChanged="ComboBox_SelectionChanged">
                     <TextBlock>Arial</TextBlock>
@@ -44,6 +74,6 @@
                 </StackPanel>
             </ToolBar>
         </ToolBarTray>
-        <TextBox x:Name="textBox" Grid.Row="1" Margin="5" Padding="5" TextWrapping="Wrap"></TextBox>
+        <TextBox x:Name="textBox" Grid.Row="2" Margin="5" Padding="5" TextWrapping="Wrap"></TextBox>
     </Grid>
 </Window>

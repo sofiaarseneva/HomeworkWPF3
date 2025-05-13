@@ -99,5 +99,10 @@
     <Resource Include="Data\i.png" />
     <Resource Include="Data\u.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Data\iconExit.png" />
+    <Resource Include="Data\iconOpen.png" />
+    <Resource Include="Data\iconSave.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
