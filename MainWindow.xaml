@@ -43,16 +43,8 @@
         </Menu>
         <ToolBarTray Grid.Row="1">
             <ToolBar>
-                <ComboBox x:Name="fontNameComboBox" Width="200" SelectedIndex="0" SelectionChanged="ComboBox_SelectionChanged">
-                    <TextBlock>Arial</TextBlock>
-                    <TextBlock>Times New Roman</TextBlock>
-                    <TextBlock>Verdana</TextBlock>
-                </ComboBox>
-                <ComboBox x:Name="fontSizeComboBox" Width="50" SelectedIndex="0" SelectionChanged="fontSizeComboBox_SelectionChanged">
-                    <TextBlock>12</TextBlock>
-                    <TextBlock>14</TextBlock>
-                    <TextBlock>16</TextBlock>
-                </ComboBox>
+                <ComboBox x:Name="fontNameComboBox" ItemsSource="{StaticResource fonts}" Width="200" SelectedIndex="0" SelectionChanged="ComboBox_SelectionChanged"/>
+                <ComboBox x:Name="fontSizeComboBox" ItemsSource="{StaticResource sizes}" Width="50" SelectedIndex="0" SelectionChanged="fontSizeComboBox_SelectionChanged"/>
             </ToolBar>
             <ToolBar>
                 <ToggleButton x:Name="boldButton" Width="50" Height="50" Click="boldButton_Click">
