@@ -43,8 +43,8 @@
         </Menu>
         <ToolBarTray Grid.Row="1">
             <ToolBar>
-                <ComboBox x:Name="fontNameComboBox" ItemsSource="{StaticResource fonts}" Width="200" SelectedIndex="0" SelectionChanged="ComboBox_SelectionChanged"/>
-                <ComboBox x:Name="fontSizeComboBox" ItemsSource="{StaticResource sizes}" Width="50" SelectedIndex="0" SelectionChanged="fontSizeComboBox_SelectionChanged"/>
+                <ComboBox x:Name="fontNameComboBox" ItemsSource="{StaticResource fonts}" Width="200" SelectedIndex="0" SelectionChanged="ComboBox_SelectionChanged" Style="{DynamicResource comboboxStyle}"/>
+                <ComboBox x:Name="fontSizeComboBox" ItemsSource="{StaticResource sizes}" Width="50" SelectedIndex="0" SelectionChanged="fontSizeComboBox_SelectionChanged" Style="{DynamicResource comboboxStyle}"/>
             </ToolBar>
             <ToolBar>
                 <ToggleButton x:Name="boldButton" Width="50" Height="50" Click="boldButton_Click">
@@ -64,6 +64,10 @@
                     <RadioButton x:Name="blackRadioButton" Content="Черный" IsChecked="True" Checked="blackRadioButton_Checked"/>
                     <RadioButton x:Name="redRadioButton" Content="Красный" Checked="redRadioButton_Checked"/>
                 </StackPanel>
+                <ComboBox Name="themes" Width="150" SelectedIndex="0" Margin="10" Style="{DynamicResource comboboxStyle}" SelectionChanged="themes_SelectionChanged">
+                    <TextBlock Text="Светлая"/>
+                    <TextBlock Text="Темная"/>
+                </ComboBox>
             </ToolBar>
         </ToolBarTray>
         <TextBox x:Name="textBox" Grid.Row="2" Margin="5" Padding="5" TextWrapping="Wrap"></TextBox>
